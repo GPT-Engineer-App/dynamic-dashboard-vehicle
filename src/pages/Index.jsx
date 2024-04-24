@@ -13,6 +13,7 @@ const Index = () => {
     const file = event.target.files[0];
     console.log("File uploaded:", file);
     setUploadedFileName(file.name);
+    localStorage.setItem("uploadedFiles", JSON.stringify([...JSON.parse(localStorage.getItem("uploadedFiles") || "[]"), file.name]));
   };
 
   return (
@@ -23,7 +24,17 @@ const Index = () => {
         <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={3}>
           Upload Vehicle Data
         </Button>
-        {uploadedFileName && <Text>Your uploaded file: {uploadedFileName}</Text>}
+        {uploadedFileName && (
+          <>
+            <Text>Your uploaded file: {uploadedFileName}</Text>
+            <Text mt={4}>Previously uploaded files:</Text>
+            <VStack>
+              {JSON.parse(localStorage.getItem("uploadedFiles") || "[]").map((fileName, index) => (
+                <Text key={index}>{fileName}</Text>
+              ))}
+            </VStack>
+          </>
+        )}
       </Flex>
       <VStack spacing={5}>
         <SimpleGrid columns={3} spacing={10}>
