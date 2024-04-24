@@ -1,14 +1,18 @@
 // Complete the Index page component for Vehicle Engine & Drivability Data Analysis Dashboard
 import { Box, Flex, Heading, Input, Button, Text, VStack, SimpleGrid } from "@chakra-ui/react";
+import { useState } from "react";
 
 import { FaFileUpload, FaChartBar } from "react-icons/fa";
 
 const Index = () => {
   // Placeholder function to simulate file upload handling
 
+  const [uploadedFileName, setUploadedFileName] = useState("");
+
   const handleFileUpload = (event) => {
-    console.log("File uploaded:", event.target.files[0]);
-    // Here you would typically handle the file, parse it and set the data for charts
+    const file = event.target.files[0];
+    console.log("File uploaded:", file);
+    setUploadedFileName(file.name);
   };
 
   return (
@@ -16,9 +20,10 @@ const Index = () => {
       <Flex direction="column" align="center" justify="center">
         <Heading mb={5}>Vehicle Engine & Drivability Data Dashboard</Heading>
         <Input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} placeholder="Upload Excel files" size="lg" mb={3} multiple />
-        <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={5}>
+        <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={3}>
           Upload Vehicle Data
         </Button>
+        {uploadedFileName && <Text>Your uploaded file: {uploadedFileName}</Text>}
       </Flex>
       <VStack spacing={5}>
         <SimpleGrid columns={3} spacing={10}>
