@@ -27,12 +27,9 @@ const Index = () => {
         {uploadedFileName && (
           <>
             <Text>Your uploaded file: {uploadedFileName}</Text>
-            <Text mt={4}>Previously uploaded files:</Text>
-            <VStack>
-              {JSON.parse(localStorage.getItem("uploadedFiles") || "[]").map((fileName, index) => (
-                <Text key={index}>{fileName}</Text>
-              ))}
-            </VStack>
+            <Button as="a" href="/uploaded-files" colorScheme="teal" mt={4}>
+              View Uploaded Files
+            </Button>
           </>
         )}
       </Flex>
