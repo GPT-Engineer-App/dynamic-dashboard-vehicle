@@ -1,9 +1,11 @@
 // Complete the Index page component for Vehicle Engine & Drivability Data Analysis Dashboard
 import { Box, Flex, Heading, Input, Button, Text, VStack, SimpleGrid } from "@chakra-ui/react";
+
 import { FaFileUpload, FaChartBar } from "react-icons/fa";
 
 const Index = () => {
   // Placeholder function to simulate file upload handling
+
   const handleFileUpload = (event) => {
     console.log("File uploaded:", event.target.files[0]);
     // Here you would typically handle the file, parse it and set the data for charts
@@ -25,12 +27,14 @@ const Index = () => {
               Fuel Economy
             </Heading>
             <FaChartBar size="3em" />
+            <FaChartBar size="3em" />
             <Text mt={2}>Chart Placeholder</Text>
           </Box>
           <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
             <Heading size="md" mb={3}>
               Distance Covered
             </Heading>
+            <FaChartBar size="3em" />
             <FaChartBar size="3em" />
             <Text mt={2}>Chart Placeholder</Text>
           </Box>
@@ -39,12 +43,14 @@ const Index = () => {
               Fuel Consumed
             </Heading>
             <FaChartBar size="3em" />
+            <FaChartBar size="3em" />
             <Text mt={2}>Chart Placeholder</Text>
           </Box>
           <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
             <Heading size="md" mb={3}>
               0 to 60 Kmph Time
             </Heading>
+            <FaChartBar size="3em" />
             <FaChartBar size="3em" />
             <Text mt={2}>Chart Placeholder</Text>
           </Box>
@@ -53,12 +59,14 @@ const Index = () => {
               Boost Pressure
             </Heading>
             <FaChartBar size="3em" />
+            <FaChartBar size="3em" />
             <Text mt={2}>Chart Placeholder</Text>
           </Box>
           <Box p={5} shadow="md" borderWidth="1px" borderRadius="md">
             <Heading size="md" mb={3}>
               Coolant Temperature
             </Heading>
+            <FaChartBar size="3em" />
             <FaChartBar size="3em" />
             <Text mt={2}>Chart Placeholder</Text>
           </Box>
