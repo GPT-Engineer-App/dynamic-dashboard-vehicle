@@ -13,9 +13,9 @@ const Index = () => {
     <Box p={5}>
       <Flex direction="column" align="center" justify="center">
         <Heading mb={5}>Vehicle Engine & Drivability Data Dashboard</Heading>
-        <Input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} placeholder="Upload Excel file" size="lg" mb={3} />
+        <Input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} placeholder="Upload Excel files" size="lg" mb={3} multiple />
         <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={5}>
-          Upload Data
+          Upload Vehicle Data
         </Button>
       </Flex>
       <VStack spacing={5}>
