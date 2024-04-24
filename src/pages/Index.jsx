@@ -19,7 +19,7 @@ const Index = () => {
 
   return (
     <Box p={5}>
-      <Flex direction="column" align="center" justify="center">
+      <Flex direction="column" align="start" justify="center">
         <Heading mb={5}>Vehicle Engine & Drivability Data Dashboard</Heading>
         <Input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} placeholder="Upload Excel files" size="lg" mb={3} multiple style={{ display: "none" }} ref={fileInputRef} />
         <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={3} onClick={() => fileInputRef.current.click()}>
