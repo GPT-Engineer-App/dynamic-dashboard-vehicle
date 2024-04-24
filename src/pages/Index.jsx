@@ -19,20 +19,17 @@ const Index = () => {
 
   return (
     <Box p={5}>
-      <Flex direction="column" align="start" justify="center">
-        <Heading mb={5}>Vehicle Engine & Drivability Data Dashboard</Heading>
-        <Input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} placeholder="Upload Excel files" size="lg" mb={3} multiple style={{ display: "none" }} ref={fileInputRef} />
-        <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={3} onClick={() => fileInputRef.current.click()}>
-          Upload Vehicle Data
+      <Flex justify="space-between" align="center" mb={5}>
+        <Flex direction="column" align="start" justify="center">
+          <Heading mb={5}>Vehicle Engine & Drivability Data Dashboard</Heading>
+          <Input type="file" accept=".xlsx, .xls" onChange={handleFileUpload} placeholder="Upload Excel files" size="lg" mb={3} multiple style={{ display: "none" }} ref={fileInputRef} />
+          <Button leftIcon={<FaFileUpload />} colorScheme="blue" mb={3} onClick={() => fileInputRef.current.click()}>
+            Upload Vehicle Data
+          </Button>
+        </Flex>
+        <Button as="a" href="/uploaded-files" colorScheme="teal" visibility={uploadedFileName ? "visible" : "hidden"}>
+          View Uploaded Files
         </Button>
-        {uploadedFileName && (
-          <>
-            <Text>Your uploaded file: {uploadedFileName}</Text>
-            <Button as="a" href="/uploaded-files" colorScheme="teal" mt={4}>
-              View Uploaded Files
-            </Button>
-          </>
-        )}
       </Flex>
       <VStack spacing={5}>
         <SimpleGrid columns={3} spacing={10}>
